@@ -1,11 +1,11 @@
-About bids-validator
-====================
+About bids-validator-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bids-validator-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/bids-standard/bids-validator
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bids-validator-feedstock/blob/main/LICENSE.txt)
 
 Summary: Validator for the Brain Imaging Data Structure
 
