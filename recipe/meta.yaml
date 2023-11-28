@@ -1,5 +1,5 @@
 {% set name = "bids-validator" %}
-{% set version = "1.13.1" %}
+{% set version = "1.14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bids-validator-{{ version }}.tar.gz
-  sha256: 7205ce4e68fba172215332c786f1ac1665025b702b6dff2b1e158f00a2df9890
+  sha256: 33b0f865c1aa3e39fb92518df163fa6b79478d1aa102af52fd53704a5ef2ea46
 
 build:
   noarch: python
@@ -18,6 +18,7 @@ requirements:
   host:
     - python >=3.6
     - pip
+    - versioneer
   run:
     - python >=3.6
 
