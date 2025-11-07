@@ -1,0 +1,54 @@
+schema_version: 1
+
+context:
+  name: bids-validator
+  version: 1.14.7.post0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: e6005a500b75f8a961593fb67d46085107dadb116f59a5c3b524aa0697945b66
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - versioneer
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - bidsschematools >=0.10
+
+tests:
+  - python:
+      imports:
+        - bids_validator
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+
+about:
+  summary: Validator for the Brain Imaging Data Structure
+  license: MIT
+  license_file:
+    - LICENSE
+  homepage: https://github.com/bids-standard/bids-validator
+
+extra:
+  recipe-maintainers:
+    - effigies
+    - rwblair
+    - sappelhoff
+    - sarthakpati
